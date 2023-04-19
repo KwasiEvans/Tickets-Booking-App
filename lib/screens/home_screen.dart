@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticketsbooking/app_styles.dart';
 import 'package:gap/gap.dart';
+import 'package:fluentui_icons/fluentui_icons.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,11 +12,11 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Styles.bgColor,
       body: ListView(
         children: [
-          const Gap(40),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
+                const Gap(40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -46,6 +47,39 @@ class HomeScreen extends StatelessWidget {
                     )
                   ],
                 ),
+                const Gap(25),
+                Container(
+                  padding: const EdgeInsetsDirectional.symmetric(
+                      horizontal: 12, vertical: 12),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: const Color(0xFFF4F6FD),
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        FluentSystemIcons.ic_fluent_search_regular,
+                        color: Color(0xFFBFC205),
+                      ),
+                      Text(
+                        "Search",
+                        style: Styles.headlineStyle4,
+                      )
+                    ],
+                  ),
+                ),
+                const Gap(30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Upcoming Flight", style: Styles.headlineStyle2),
+                    InkWell(
+                        onTap: () {
+                          print("I am wroking");
+                        },
+                        child: Text("View all", style: Styles.headlineStyle3)),
+                  ],
+                )
               ],
             ),
           ),
