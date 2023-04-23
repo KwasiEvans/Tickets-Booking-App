@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticketsbooking/screens/utils/app_layout.dart';
 import 'package:ticketsbooking/screens/utils/app_styles.dart';
+import 'package:gap/gap.dart';
 
 class HotelScreen extends StatelessWidget {
   const HotelScreen({super.key});
@@ -24,7 +25,7 @@ class HotelScreen extends StatelessWidget {
           )
         ],
       ),
-      child: Column(children: [
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
           height: 180,
           decoration: BoxDecoration(
@@ -36,6 +37,13 @@ class HotelScreen extends StatelessWidget {
             ),
           ),
         ),
+        const Gap(15),
+        Text("Open Space", style: Styles.headlineStyle4),
+        const Gap(10),
+        Text("Accra",
+            style: Styles.headlineStyle3.copyWith(color: Colors.white)),
+        const Gap(10),
+        Text("\$100/night", style: Styles.headlineStyle4),
       ]),
     );
   }
