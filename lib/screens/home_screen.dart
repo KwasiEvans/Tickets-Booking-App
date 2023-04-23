@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ticketsbooking/screens/ticket_view.dart';
+import 'package:ticketsbooking/screens/hotel_views/hotel_screen.dart';
+import 'package:ticketsbooking/screens/tickets/ticket_one_view.dart';
+import 'package:ticketsbooking/screens/tickets/ticket_two_view.dart';
+import 'package:ticketsbooking/screens/tickets/ticket_three_view.dart';
+import 'package:ticketsbooking/screens/tickets/ticket_four_view.dart';
 import 'package:ticketsbooking/screens/utils/app_styles.dart';
 import 'package:gap/gap.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -85,7 +89,43 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Gap(30),
-          const TicketView(),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(children: const [
+              TicketOneView(),
+              TicketTwoView(),
+              TicketThreeView(),
+              TicketFourView(),
+            ]),
+          ),
+          const Gap(15),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Hotels", style: Styles.headlineStyle2),
+                // const Spacer(),
+                InkWell(
+                  onTap: () {},
+                  child: Text(
+                    "View all",
+                    style: Styles.headlineStyle3,
+                  ),
+                )
+              ],
+            ),
+          ),
+          const Gap(15),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(children: const [
+              HotelScreen(),
+              HotelScreen(),
+            ]),
+          ),
         ],
       ),
     );

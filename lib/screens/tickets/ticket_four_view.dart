@@ -4,17 +4,17 @@ import 'package:ticketsbooking/screens/utils/app_styles.dart';
 import 'package:ticketsbooking/widgets/thick_contianer.dart';
 import 'package:gap/gap.dart';
 
-class TicketView extends StatelessWidget {
-  const TicketView({super.key});
+class TicketFourView extends StatelessWidget {
+  const TicketFourView({super.key});
 
   @override
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return SizedBox(
-      width: size.width,
+      width: size.width * 0.85,
       height: 200,
       child: Container(
-        margin: const EdgeInsets.only(left: 16),
+        margin: const EdgeInsets.only(right: 16),
         child: Column(
           children: [
             Container(
@@ -177,10 +177,60 @@ class TicketView extends StatelessWidget {
                   bottomRight: Radius.circular(21),
                 ),
               ),
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.only(
+                  left: 16, top: 10, right: 16, bottom: 16),
               child: Column(
                 children: [
-                  Row(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "1st Mach",
+                            style: Styles.headlineStyle3
+                                .copyWith(color: Colors.white),
+                          ),
+                          Text(
+                            "Date",
+                            style: Styles.headlineStyle3
+                                .copyWith(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            "9:00 AM",
+                            style: Styles.headlineStyle3
+                                .copyWith(color: Colors.white),
+                          ),
+                          Text(
+                            "Depature time",
+                            style: Styles.headlineStyle3
+                                .copyWith(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            "15",
+                            style: Styles.headlineStyle3
+                                .copyWith(color: Colors.white),
+                          ),
+                          Text(
+                            "Number",
+                            style: Styles.headlineStyle3
+                                .copyWith(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
